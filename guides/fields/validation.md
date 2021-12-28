@@ -72,7 +72,7 @@ You can write custom validators, too. A validator is a class that extends `Graph
 
 Then, custom validators can be attached either:
 
-- directly, passed to `validates`, like `validates: { MyCustomValidator => { some: :options }`
-- by keyword, if the keyword is registered with `GraphQL::Schema::Validator.install(:custom, MyCustomValidator)`. (That would support `validates: { custom: { some: :options }})`.)
+- directly, passed to `validates`, like `validates: { MyCustomValidator => { some: :options } }`
+- by keyword, if the keyword is registered with `GraphQL::Schema::Validator.install(:custom, MyCustomValidator)`. (That would support `validates: { custom: { some: :options }}`.)
 
 Validators are initialized when the schema is constructed (at application boot), and `validate(...)` is called while executing the query. There's one `Validator` instance for each configuration on each field, argument, or input object. (`Validator` instances aren't shared.)
